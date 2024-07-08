@@ -22,7 +22,10 @@ Test reading `data/cat.pdf` file.(ypu can add PDF files)
 Your cat's name is Muffy. (depending on the data in your file)
 ```
 
-Make sure you download all the requirements by running {pip install -r requirements.txt}
+Make sure you download all the requirements by running
+```
+pip install -r requirements.txt
+```
 if that doesn't work, try replacing pip with pip3
 
 
