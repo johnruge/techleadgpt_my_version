@@ -8,6 +8,8 @@ from langchain_openai import OpenAIEmbeddings
 from langchain.indexes.vectorstore import VectorStoreIndexWrapper, VectorstoreIndexCreator
 from langchain_community.vectorstores import Chroma
 import constants
+import psutil
+
 
 os.environ["OPENAI_API_KEY"] = constants.APIKEY
 
@@ -25,7 +27,7 @@ if PERSIST and os.path.exists("persist"):
     print("Reusing index...\n")
     vectorstore = Chroma(persist_directory="persist", embedding_function=embeddings)
 else:
-    loader = TextLoader("data/data.txt")
+    loader = DirectoryLoader("data/")
     vectorstore = Chroma(embedding_function=embeddings)  # Initialize Chroma with embeddings
 
     # Create the index
